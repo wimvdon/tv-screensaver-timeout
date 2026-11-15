@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- The name shown under the launcher icon. Rename per app (also in every values-xx folder). -->
-    <string name="app_name">Template</string>
-    <string name="home_title">Bonjour !</string>
-    <string name="home_body">Voici l’écran d’exemple du modèle d’app.</string>
-    <plurals name="home_tap_count">
-        <item quantity="one">Touché %d fois</item>
-        <item quantity="many">Touché %d fois</item>
-        <item quantity="other">Touché %d fois</item>
+    <string name="app_name">Screensaver Timeout</string>
+    <string name="now_starts_after">L’économiseur d’écran Google TV démarre après %1$s.</string>
+    <string name="current_unknown">Le téléviseur n’indique pas quand son économiseur d’écran démarre.</string>
+    <string name="philips_note">L’économiseur d’écran Philips démarre après environ 2 minutes.</string>
+    <string name="section_start_after">Démarrer l’économiseur après</string>
+    <string name="keep_set_title">Conserver ce réglage</string>
+    <string name="keep_set_summary">Le rétablit après un redémarrage ou si le téléviseur le modifie</string>
+    <string name="restore_title">Rétablir le réglage du téléviseur</string>
+    <string name="restore_summary">Retour à %1$s. Désactive « Conserver ce réglage ».</string>
+    <string name="setup_title">Autorisation requise</string>
+    <string name="setup_body">Accordez-la une fois depuis un ordinateur du même réseau, avec ADB :</string>
+    <string name="action_check_again">Vérifier à nouveau</string>
+    <string name="action_open_settings">Ouvrir les paramètres</string>
+    <string name="no_settings_screen">Ce téléviseur n’a pas d’écran de réglage pour cela. Utilisez la commande.</string>
+    <plurals name="duration_seconds">
+        <item quantity="one">%d seconde</item>
+        <item quantity="many">%d secondes</item>
+        <item quantity="other">%d secondes</item>
     </plurals>
-    <string name="home_tap_button">Touchez ici</string>
-    <string name="home_reset_button">Réinitialiser</string>
+    <plurals name="duration_minutes">
+        <item quantity="one">%d minute</item>
+        <item quantity="many">%d minutes</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
 </resources>

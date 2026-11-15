@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- The name shown under the launcher icon. Rename per app (also in every values-xx folder). -->
-    <string name="app_name">Template</string>
-    <string name="home_title">Hello!</string>
-    <string name="home_body">This is the placeholder screen of the app template.</string>
-    <plurals name="home_tap_count">
-        <item quantity="one">Tapped %d time</item>
-        <item quantity="other">Tapped %d times</item>
+    <!-- The name shown under the launcher icon. -->
+    <string name="app_name">Screensaver Timeout</string>
+    <string name="now_starts_after">The Google TV screensaver starts after %1$s.</string>
+    <string name="current_unknown">The TV doesn’t report when its screensaver starts.</string>
+    <string name="philips_note">The Philips screensaver starts after about 2 minutes.</string>
+    <string name="section_start_after">Start screensaver after</string>
+    <string name="keep_set_title">Keep this setting</string>
+    <string name="keep_set_summary">Sets it again after a restart or when the TV changes it</string>
+    <string name="restore_title">Restore the TV’s setting</string>
+    <string name="restore_summary">Back to %1$s. Turns off Keep this setting.</string>
+    <string name="setup_title">Permission needed</string>
+    <string name="setup_body">Allow it once from a computer on the same network, with ADB:</string>
+    <string name="action_check_again">Check again</string>
+    <string name="action_open_settings">Open settings</string>
+    <string name="no_settings_screen">This TV has no settings screen for this. Use the command.</string>
+    <plurals name="duration_seconds">
+        <item quantity="one">%d second</item>
+        <item quantity="other">%d seconds</item>
     </plurals>
-    <string name="home_tap_button">Tap me</string>
-    <string name="home_reset_button">Reset</string>
+    <plurals name="duration_minutes">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <string name="adb_command" translatable="false">adb shell appops set %1$s WRITE_SETTINGS allow</string>
+    <string name="footer" translatable="false">%1$s %2$s</string>
 </resources>

@@ -2,6 +2,28 @@
 
 Newest first. Add an entry for every notable choice: what was decided, why, and what was rejected.
 
+## 2026-11-15: Screensaver Timeout is a TV-only app with TV Material and two permissions
+
+The app's only job is on Philips Google TVs: keep Android's screen-off timeout shorter than the
+two minutes after which Philips starts its own screensaver. Decisions:
+
+- **TV only:** `android.software.leanback` is required and the only launcher entry is the TV
+  launcher (`LEANBACK_LAUNCHER`), with a 320 × 180 banner. There is no phone UI to maintain.
+- **TV Material (`androidx.tv:tv-material`)**, agreed with the owner: Material 3's components
+  barely show which item the remote has focused. TV Favorites uses the same library. The screen is
+  always dark with a fixed palette (no Theme or Dynamic color settings: TVs are dark and Google TV
+  has no wallpaper colours).
+- **Permissions, agreed with the owner:** `WRITE_SETTINGS` to change the timeout (TVs hide the
+  screen to grant it, so it is granted once with `adb shell appops set … WRITE_SETTINGS allow`)
+  and `RECEIVE_BOOT_COMPLETED` to set it again after a restart.
+- **No running service:** a JobScheduler content-trigger job on the setting puts the value back
+  when the TV changes it, plus a check 90 seconds after boot. Rejected: a foreground service with
+  a `ContentObserver` (a permanent notification and battery use for a setting that rarely changes)
+  and only reapplying at boot (Philips firmware can reset the value later).
+- **Nothing is backed up:** the settings only work after the permission step on this TV, so they
+  live in a device-only DataStore file (`device_state`).
+- **minSdk stays 31:** Philips Google TVs run Android 12 or later.
+
 ## 2026-11-01: Claude Code sessions don't build the APK before pushing
 
 Sessions ran `./gradlew testDebugUnitTest lintDebug assembleDebug` before every push, and CI then

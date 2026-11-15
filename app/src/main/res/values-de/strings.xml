@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- The name shown under the launcher icon. Rename per app (also in every values-xx folder). -->
-    <string name="app_name">Template</string>
-    <string name="home_title">Hallo!</string>
-    <string name="home_body">Das ist der Beispielbildschirm der App-Vorlage.</string>
-    <plurals name="home_tap_count">
-        <item quantity="one">%d-mal getippt</item>
-        <item quantity="other">%d-mal getippt</item>
+    <string name="app_name">Screensaver Timeout</string>
+    <string name="now_starts_after">Der Google TV-Bildschirmschoner startet nach %1$s.</string>
+    <string name="current_unknown">Der Fernseher meldet nicht, wann sein Bildschirmschoner startet.</string>
+    <string name="philips_note">Der Philips-Bildschirmschoner startet nach etwa 2 Minuten.</string>
+    <string name="section_start_after">Bildschirmschoner starten nach</string>
+    <string name="keep_set_title">Einstellung beibehalten</string>
+    <string name="keep_set_summary">Setzt sie nach einem Neustart oder einer Änderung durch den Fernseher wieder</string>
+    <string name="restore_title">Einstellung des Fernsehers wiederherstellen</string>
+    <string name="restore_summary">Zurück zu %1$s. Schaltet „Einstellung beibehalten“ aus.</string>
+    <string name="setup_title">Berechtigung nötig</string>
+    <string name="setup_body">Erteile sie einmal von einem Computer im selben Netzwerk, mit ADB:</string>
+    <string name="action_check_again">Erneut prüfen</string>
+    <string name="action_open_settings">Zu den Einstellungen</string>
+    <string name="no_settings_screen">Dieser Fernseher hat dafür keine Einstellungsseite. Verwende den Befehl.</string>
+    <plurals name="duration_seconds">
+        <item quantity="one">%d Sekunde</item>
+        <item quantity="other">%d Sekunden</item>
     </plurals>
-    <string name="home_tap_button">Hier tippen</string>
-    <string name="home_reset_button">Zurücksetzen</string>
+    <plurals name="duration_minutes">
+        <item quantity="one">%d Minute</item>
+        <item quantity="other">%d Minuten</item>
+    </plurals>
 </resources>

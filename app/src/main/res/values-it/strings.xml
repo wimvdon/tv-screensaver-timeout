@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- The name shown under the launcher icon. Rename per app (also in every values-xx folder). -->
-    <string name="app_name">Template</string>
-    <string name="home_title">Ciao!</string>
-    <string name="home_body">Questa è la schermata di esempio del modello di app.</string>
-    <plurals name="home_tap_count">
-        <item quantity="one">Toccato %d volta</item>
-        <item quantity="many">Toccato %d volte</item>
-        <item quantity="other">Toccato %d volte</item>
+    <string name="app_name">Screensaver Timeout</string>
+    <string name="now_starts_after">Il salvaschermo di Google TV parte dopo %1$s.</string>
+    <string name="current_unknown">Il televisore non indica quando parte il salvaschermo.</string>
+    <string name="philips_note">Il salvaschermo Philips parte dopo circa 2 minuti.</string>
+    <string name="section_start_after">Avvia il salvaschermo dopo</string>
+    <string name="keep_set_title">Mantieni questa impostazione</string>
+    <string name="keep_set_summary">La riapplica dopo un riavvio o se il televisore la cambia</string>
+    <string name="restore_title">Ripristina l’impostazione del televisore</string>
+    <string name="restore_summary">Torna a %1$s. Disattiva «Mantieni questa impostazione».</string>
+    <string name="setup_title">Serve un’autorizzazione</string>
+    <string name="setup_body">Concedila una volta da un computer sulla stessa rete, con ADB:</string>
+    <string name="action_check_again">Controlla di nuovo</string>
+    <string name="action_open_settings">Apri impostazioni</string>
+    <string name="no_settings_screen">Questo televisore non ha una schermata per questo. Usa il comando.</string>
+    <plurals name="duration_seconds">
+        <item quantity="one">%d secondo</item>
+        <item quantity="many">%d secondi</item>
+        <item quantity="other">%d secondi</item>
     </plurals>
-    <string name="home_tap_button">Tocca qui</string>
-    <string name="home_reset_button">Ripristina</string>
+    <plurals name="duration_minutes">
+        <item quantity="one">%d minuto</item>
+        <item quantity="many">%d minuti</item>
+        <item quantity="other">%d minuti</item>
+    </plurals>
 </resources>
