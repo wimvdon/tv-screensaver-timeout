@@ -1,14 +1,34 @@
 # Architecture
 
-> Template skeleton. Fill in the "This app" section for each app and keep it up to date.
-
 ## This app
-_What the app does, its screens, and where its data lives. (Placeholder: one home screen with a tap counter. No stored data.)_
+An Android TV app (Philips Google TVs) with one screen. It keeps Android's screen-off timeout
+(`Settings.System.SCREEN_OFF_TIMEOUT`) below the two minutes after which Philips starts its own
+screensaver, so the Google TV screensaver (ambient mode) starts first.
+
+- `logic/TimeoutRules.kt`: the choices (30 s, 1 min, 90 s) and what to do in each situation
+  (write, nothing to do, no permission, restore). Plain Kotlin, unit tested.
+- `logic/DurationParts.kt`: how a duration is shown (minutes or seconds). Unit tested.
+- `system/ScreenTimeout.kt`: reads and writes the setting and carries out a `Step` from the rules.
+  Writing needs `WRITE_SETTINGS`, which TVs only let you grant over ADB
+  (`adb shell appops set <package> WRITE_SETTINGS allow`).
+- `system/Watcher.kt`: keeps the value in place without a running service. `BootReceiver` sets it
+  again after a restart and after an app update; a job 90 seconds after boot catches firmware that
+  writes its own value late; a JobScheduler content-trigger job runs whenever the setting changes
+  and puts the chosen value back (it schedules itself again after each run).
+- `ui/home/`: the one screen, drawn with TV Material. Without the permission it shows a setup
+  state with the ADB command instead of the settings. `HomeController` carries out the actions.
+- **Stored data:** one DataStore file, `device_state` (never backed up): the chosen time, whether
+  to keep it set, and the TV's own value from before the first change (for Restore). Everything is
+  device-only because it only works after the permission step on this TV. The template's
+  `backed_up_settings` rule stays in place for settings that could be backed up later.
 
 ## Structure
 ```
 app/src/main/kotlin/<package>/
-  MainActivity.kt          Entry point. Only sets up the theme and the first screen.
+  ui/MainActivity.kt       Entry point. Only sets up the theme and the first screen.
+  logic/                   Plain Kotlin rules (no Android types) → unit tested.
+  data/                    DataStore.
+  system/                  Android system access: the setting, boot receiver, jobs.
   ui/theme/Theme.kt        Material 3 theme (light/dark, dynamic colour).
   ui/<feature>/            One folder per screen/feature:
     <Feature>Screen.kt       Composables: display state, forward clicks. No logic.

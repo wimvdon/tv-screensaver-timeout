@@ -26,23 +26,27 @@ python3 -m unittest discover -s scripts/tests
 - No device tests (instrumented/UI tests) are set up: they need an emulator, which makes CI slow and
   flaky. Add them only if a decision in `decisions.md` says so.
 
-## Manual (on the phone)
+## Manual (on the TV)
 
-What automation can't check: how it looks and feels on a real device. For each pull request (before or after it is merged: merging only waits for green CI),
-install the debug APK (see README, "Testing a pull request") and follow the steps in the pull request
-description. In addition, check every now and then (always before a release):
+What automation can't check: how it looks and works on a real TV. For each pull request (before or
+after it is merged: merging only waits for green CI), install the debug APK (see README, "Testing a
+pull request") and follow the steps in the pull request description. In addition, check every now
+and then (always before a release):
 
-- [ ] The app starts, and the changed screen looks right.
-- [ ] **Dark mode**: switch the phone's dark theme on/off. Text stays readable.
-- [ ] **Rotation** (if auto-rotate is on): the screen still works and keeps its state (e.g. the tap count).
-- [ ] **Language**: Settings → System → Languages → App languages → this app → Nederlands.
+- [ ] The app opens from the TV's app list (its banner shows), and every item can be reached and
+      chosen with the remote; the focused item is clearly highlighted.
+- [ ] **Without the permission** (fresh install): the setup screen shows the ADB command with this
+      build's package name. After running it, **Check again** shows the settings.
+- [ ] **Choosing a time** updates "starts after" at the top. Leave the remote alone: the Google TV
+      screensaver starts after that time, not the Philips one.
+- [ ] **Restart** the TV (unplug it, or Settings › System › Restart). After about two minutes,
+      open the app: the chosen time is still set.
+- [ ] **Restore the TV's setting** puts back the original time and turns off Keep this setting.
+- [ ] **Language**: Settings › System › Language, or the app's own language in Settings › Apps.
       All text is translated.
-- [ ] **Large text**: Settings → Display → Font size at maximum. Nothing is cut off.
-- [ ] **Back** gesture/button behaves as expected.
-- [ ] After a release: install the release APK over the previous release. It updates without
-      losing data.
-- [ ] **Backup** (once the app stores settings): change a setting, Settings → search "Backup" →
-      Back up now, uninstall, install the same APK again. The setting is back.
+- [ ] **Back** leaves the app.
+- [ ] After a release: install the release APK over the previous release (`adb install -r`). It
+      updates and keeps the permission and settings.
 
 ## Reading a crash from a release build
 Release builds are minified, so stack traces show short names like `a.b.c`. Download

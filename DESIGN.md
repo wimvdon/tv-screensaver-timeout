@@ -226,5 +226,12 @@ app apart from their package (and `R` import) lines. Copy a change to the other 
 
 ## This app
 
-Each app replaces this section with its own rules: the seed colour of its theme and its
-signature element.
+- Icon: a crescent moon with a white sparkle, gradient `#B388FF` → `#7C4DFF` → `#4527A0`. Seed
+  `#7C4DFF` for the palette. The TV banner shows the white crescent on the same gradient.
+- An Android TV app: always dark (one fixed scheme, no Theme or Dynamic color settings) and drawn
+  with TV Material, so the remote's focus scales and highlights items, as in TV Favorites.
+- One screen, laid out like a settings list: the time choices as list items with a radio button,
+  then Keep this setting (switch) and Restore. 48 × 27 dp page padding for TV overscan.
+- Setup needed (no permission): the setup state replaces the screen, with the ADB command in a
+  monospace box, **Check again** as the main button and **Open settings** as the alternative.
+- Icons are Material's paths as vector drawables, as there is no icon library.

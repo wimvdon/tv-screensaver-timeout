@@ -1,36 +1,61 @@
-# Android app template
+# Screensaver Timeout
 
-A starting point for Android apps built with Claude Code and GitHub. Out of the box it
-**builds, tests and releases**. The only app content is a placeholder screen with a tap
-counter.
+An Android TV app for Philips Google TVs that makes your own screensaver (Google TV's ambient mode,
+for example a Google Photos slideshow) start before the Philips screensaver.
 
-- Kotlin, Jetpack Compose, Material 3 (light/dark, wallpaper colours), Android 12+.
-- CI on every pull request: unit tests, lint, debug and release builds, and an installable APK.
-- One-click signed releases on GitHub, with automatic version numbers.
-- Weekly dependency updates (Dependabot).
-- Rules for Claude Code sessions in [`CLAUDE.md`](CLAUDE.md).
+Philips TVs start their own screensaver after about two minutes without input. The Google TV
+screensaver starts when Android's screen timeout runs out, so this app keeps that timeout shorter
+(30 seconds, 1 minute or 90 seconds). Restarts and firmware updates can reset the timeout, so the app
+sets it again after every restart and whenever the TV changes it.
 
-> **New app from this template?** Start with [Using this template](#using-this-template).
+- **Keep this setting** sets the timeout again after a restart or when the TV changes it.
+- **Restore the TV's setting** goes back to the value the TV had before the app first changed it.
+
+Kotlin, Jetpack Compose, TV Material, Android 12+. No internet access, nothing collected:
+see the [privacy policy](PRIVACY.md) and [architecture](docs/architecture.md).
+
+Built from the Android app template: CI on every pull request, one-click signed releases.
 
 ---
 
-## Installing the app on your phone
+## Installing the app on the TV
 
-### From a GitHub Release (the normal way)
-1. On your phone, open the repository on GitHub and tap **Releases** (or go to `…/releases/latest`).
-2. Under **Assets**, tap `<app>-<version>.apk` to download it.
-3. Open the downloaded file. The first time, Android asks you to allow installing apps from your
-   browser ("Install unknown apps"). Allow it, go back, and tap **Install**.
-4. Updates: install the newer APK the same way. Your data is kept.
+The app needs one permission that TVs don't let you give in their menus, so installing and the
+one-time permission step go through ADB from a computer on the same network.
+
+1. **Developer options on the TV:** Settings › System › About, then press OK on **Android TV OS
+   build** seven times.
+2. **Network debugging:** Settings › System › Developer options › turn on **USB debugging** (on
+   most Google TVs this also allows debugging over the network). Note the TV's IP address under
+   Settings › Network & Internet.
+3. **Connect from the computer** (install [Android platform-tools](https://developer.android.com/tools/releases/platform-tools)
+   for `adb`) and accept the prompt on the TV:
+   ```
+   adb connect <TV-IP>
+   ```
+4. **Install** the APK from the latest GitHub Release (Assets › `<app>-<version>.apk`):
+   ```
+   adb install tv-screensaver-timeout-<version>.apk
+   ```
+5. **Allow the app to change the timeout** (once; it survives restarts):
+   ```
+   adb shell appops set to.wim.screensavertimeout WRITE_SETTINGS allow
+   ```
+6. Open **Screensaver Timeout** on the TV and choose a time.
+
+Updates: install the newer APK with `adb install -r`. The permission and settings are kept.
 
 ### Testing a pull request
 Every pull request builds a **debug APK**:
-1. Open the pull request → **Checks** → **CI** → scroll to **Artifacts**.
-2. Download `<app>-<version>-debug.apk` and install it like above.
+1. Open the pull request › **Checks** › **CI** › scroll to **Artifacts**.
+2. Download `<app>-<version>-debug.apk` and install it like above. The debug app has its own ID
+   ending in `.debug`, so its permission command is
+   `adb shell appops set to.wim.screensavertimeout.debug WRITE_SETTINGS allow`
+   (the app shows the exact command).
 
-The debug app installs **next to** the released app (it has its own ID ending in `.debug` and
-its own data), so you will see two icons with the same name. Uninstall the debug one when you're
-done testing.
+The debug app installs **next to** the released app, so you will see two icons with the same name.
+Uninstall the debug one when you're done testing. Only one of them should have **Keep this setting**
+on, or they each set their own value.
 
 ---
 

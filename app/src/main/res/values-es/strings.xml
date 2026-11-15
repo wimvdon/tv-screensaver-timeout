@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- The name shown under the launcher icon. Rename per app (also in every values-xx folder). -->
-    <string name="app_name">Template</string>
-    <string name="home_title">¡Hola!</string>
-    <string name="home_body">Esta es la pantalla de ejemplo de la plantilla de app.</string>
-    <plurals name="home_tap_count">
-        <item quantity="one">Tocado %d vez</item>
-        <item quantity="many">Tocado %d veces</item>
-        <item quantity="other">Tocado %d veces</item>
+    <string name="app_name">Screensaver Timeout</string>
+    <string name="now_starts_after">El salvapantallas de Google TV se inicia tras %1$s.</string>
+    <string name="current_unknown">El televisor no indica cuándo se inicia su salvapantallas.</string>
+    <string name="philips_note">El salvapantallas de Philips se inicia tras unos 2 minutos.</string>
+    <string name="section_start_after">Iniciar salvapantallas tras</string>
+    <string name="keep_set_title">Mantener este ajuste</string>
+    <string name="keep_set_summary">Lo vuelve a aplicar tras un reinicio o si el televisor lo cambia</string>
+    <string name="restore_title">Restablecer el ajuste del televisor</string>
+    <string name="restore_summary">Vuelve a %1$s. Desactiva «Mantener este ajuste».</string>
+    <string name="setup_title">Se necesita permiso</string>
+    <string name="setup_body">Concédelo una vez desde un ordenador de la misma red, con ADB:</string>
+    <string name="action_check_again">Comprobar de nuevo</string>
+    <string name="action_open_settings">Abrir ajustes</string>
+    <string name="no_settings_screen">Este televisor no tiene una pantalla de ajustes para esto. Usa el comando.</string>
+    <plurals name="duration_seconds">
+        <item quantity="one">%d segundo</item>
+        <item quantity="many">%d segundos</item>
+        <item quantity="other">%d segundos</item>
     </plurals>
-    <string name="home_tap_button">Toca aquí</string>
-    <string name="home_reset_button">Restablecer</string>
+    <plurals name="duration_minutes">
+        <item quantity="one">%d minuto</item>
+        <item quantity="many">%d minutos</item>
+        <item quantity="other">%d minutos</item>
+    </plurals>
 </resources>

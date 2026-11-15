@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Template</string>
-    <string name="home_title">Hallo!</string>
-    <string name="home_body">Dit is het voorbeeldscherm van de app-template.</string>
-    <plurals name="home_tap_count">
-        <item quantity="one">%d keer getikt</item>
-        <item quantity="other">%d keer getikt</item>
+    <string name="app_name">Screensaver Timeout</string>
+    <string name="now_starts_after">De Google TV-screensaver start na %1$s.</string>
+    <string name="current_unknown">De tv geeft niet door wanneer de screensaver start.</string>
+    <string name="philips_note">De Philips-screensaver start na ongeveer 2 minuten.</string>
+    <string name="section_start_after">Screensaver starten na</string>
+    <string name="keep_set_title">Instelling vasthouden</string>
+    <string name="keep_set_summary">Zet ze opnieuw na een herstart of als de tv ze wijzigt</string>
+    <string name="restore_title">Tv-instelling terugzetten</string>
+    <string name="restore_summary">Terug naar %1$s. Zet Instelling vasthouden uit.</string>
+    <string name="setup_title">Toestemming nodig</string>
+    <string name="setup_body">Geef ze één keer vanaf een computer in hetzelfde netwerk, met ADB:</string>
+    <string name="action_check_again">Opnieuw controleren</string>
+    <string name="action_open_settings">Naar instellingen</string>
+    <string name="no_settings_screen">Deze tv heeft daar geen instellingenscherm voor. Gebruik het commando.</string>
+    <plurals name="duration_seconds">
+        <item quantity="one">%d seconde</item>
+        <item quantity="other">%d seconden</item>
     </plurals>
-    <string name="home_tap_button">Tik hier</string>
-    <string name="home_reset_button">Opnieuw</string>
+    <plurals name="duration_minutes">
+        <item quantity="one">%d minuut</item>
+        <item quantity="other">%d minuten</item>
+    </plurals>
 </resources>

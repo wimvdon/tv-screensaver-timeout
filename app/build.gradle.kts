@@ -9,7 +9,7 @@ plugins {
 // App identity: the ONE place to change the package / application ID.
 // (Also move the Kotlin sources in app/src/*/kotlin/ to the matching folder.)
 // ---------------------------------------------------------------------------
-val appId = "com.example.template"
+val appId = "to.wim.screensavertimeout"
 
 // ---------------------------------------------------------------------------
 // Versioning
@@ -135,6 +135,8 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.tv.material)
+    implementation(libs.androidx.datastore.preferences)
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     testImplementation(libs.junit)

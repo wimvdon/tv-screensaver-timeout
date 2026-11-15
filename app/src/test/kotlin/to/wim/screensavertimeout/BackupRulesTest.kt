@@ -1,4 +1,4 @@
-package com.example.template
+package to.wim.screensavertimeout
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

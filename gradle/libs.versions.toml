@@ -7,8 +7,8 @@ kotlin = "2.4.21"
 coreKtx = "1.19.1"
 activityCompose = "1.13.0"
 composeBom = "2026.09.00"
-# Not used by the template app. Use DataStore when the app needs to store settings or small data.
 datastore = "1.2.1"
+tvMaterial = "1.1.0"
 junit = "4.13.2"
 
 [libraries]
@@ -21,6 +21,7 @@ androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+androidx-tv-material = { group = "androidx.tv", name = "tv-material", version.ref = "tvMaterial" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 [plugins]
