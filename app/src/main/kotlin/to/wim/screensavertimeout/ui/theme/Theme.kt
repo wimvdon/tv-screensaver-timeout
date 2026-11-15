@@ -1,7 +1,9 @@
 package to.wim.screensavertimeout.ui.theme
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
+import androidx.tv.material3.LocalContentColor
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.darkColorScheme
 
@@ -39,7 +41,13 @@ private val TvColors =
         scrim = Color(0xFF000000),
     )
 
+/**
+ * TV Material's Text takes its colour from LocalContentColor, which is black unless a Surface sets
+ * it. The screen draws its own background, so the content colour is set here: light on dark.
+ */
 @Composable
 fun AppTheme(content: @Composable () -> Unit) {
-    MaterialTheme(colorScheme = TvColors, content = content)
+    MaterialTheme(colorScheme = TvColors) {
+        CompositionLocalProvider(LocalContentColor provides TvColors.onBackground, content = content)
+    }
 }
