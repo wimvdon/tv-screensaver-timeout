@@ -226,8 +226,10 @@ app apart from their package (and `R` import) lines. Copy a change to the other 
 
 ## This app
 
-- Icon: a crescent moon with a white sparkle, gradient `#B388FF` → `#7C4DFF` → `#4527A0`. Seed
-  `#7C4DFF` for the palette. The TV banner shows the white crescent on the same gradient.
+- Icon: a crescent moon on its own, gradient `#B388FF` → `#7C4DFF` → `#4527A0`, on a soft violet
+  plate (`#F2EDFF` → `#E5DBFF`, the app violet mixed with 90% and 80% white) instead of white.
+  Seed `#7C4DFF` for the palette. The TV banner shows the same gradient crescent, twice the
+  size, centred on the same plate.
 - An Android TV app: always dark (one fixed scheme, no Theme or Dynamic color settings) and drawn
   with TV Material, so the remote's focus scales and highlights items, as in TV Favorites.
 - One screen, laid out like a settings list: the time choices as list items with a radio button,
