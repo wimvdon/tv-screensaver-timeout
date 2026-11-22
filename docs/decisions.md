@@ -2,6 +2,18 @@
 
 Newest first. Add an entry for every notable choice: what was decided, why, and what was rejected.
 
+## 2026-11-22: Icons: same padding in every app, white background, white details; colour scheme follows the icon
+
+Part of the owner's approved icon redesign for all apps (`DESIGN.md` "Icons"). The crescent now
+sits in a group that centres it and puts its furthest point 26.3 from the middle of the 108 canvas,
+the same as every other app. The adaptive-icon background is plain white instead of the soft violet
+plate, and the TV banner is white with the moon at the same proportion (furthest point at 48.7% of
+the banner's half height, no tinted plate). The monochrome layer has the same padding. The moon has
+no inner detail, so nothing turns white. The app has no logo or icon-on-a-plate inside its
+screens (the setup lock sits in a theme-coloured circle that is not the app icon). The colour
+scheme already followed the icon (seed `#7C4DFF`, the gradient's middle stop), so the dark tonal
+scheme in `Theme.kt` is unchanged. Supersedes the violet plate entry below.
+
 ## 2026-11-22: The icon is just the moon, on a soft violet plate
 
 Part of making all of the owner's app icons one family. The owner asked for a simpler icon: the

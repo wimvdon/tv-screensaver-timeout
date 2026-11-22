@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Screensaver Timeout: a crescent moon on its own (DESIGN.md "This app"), scaled 0.86 around the
-     centre so it stays inside the 66dp safe zone. Gradient #B388FF → #7C4DFF → #4527A0. -->
+<!-- Screensaver Timeout: a crescent moon on its own (DESIGN.md "This app"). Gradient #B388FF →
+     #7C4DFF → #4527A0. The outer group is the family's shared padding: the moon is centred and its
+     furthest point lies 26.3 from the middle of the 108 canvas. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
@@ -8,23 +9,31 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
     <group
-        android:pivotX="54"
+        android:pivotX="53.375"
         android:pivotY="54"
-        android:scaleX="0.86"
-        android:scaleY="0.86">
-        <path android:pathData="M54.72,24.01 A30,30 0 1,0 82.6,63.05 A24,24 0 1,1 54.72,24.01 Z">
-            <aapt:attr name="android:fillColor">
-                <gradient
-                    android:type="linear"
-                    android:startX="24"
-                    android:startY="24"
-                    android:endX="84"
-                    android:endY="84">
-                <item android:color="#FFB388FF" android:offset="0" />
-                <item android:color="#FF7C4DFF" android:offset="0.5" />
-                <item android:color="#FF4527A0" android:offset="1" />
-                </gradient>
-            </aapt:attr>
-        </path>
+        android:scaleX="0.9970"
+        android:scaleY="0.9970"
+        android:translateX="0.625"
+        android:translateY="0">
+        <group
+            android:pivotX="54"
+            android:pivotY="54"
+            android:scaleX="0.86"
+            android:scaleY="0.86">
+            <path android:pathData="M54.72,24.01 A30,30 0 1,0 82.6,63.05 A24,24 0 1,1 54.72,24.01 Z">
+                <aapt:attr name="android:fillColor">
+                    <gradient
+                        android:type="linear"
+                        android:startX="24"
+                        android:startY="24"
+                        android:endX="84"
+                        android:endY="84">
+                    <item android:color="#FFB388FF" android:offset="0" />
+                    <item android:color="#FF7C4DFF" android:offset="0.5" />
+                    <item android:color="#FF4527A0" android:offset="1" />
+                    </gradient>
+                </aapt:attr>
+            </path>
+        </group>
     </group>
 </vector>
