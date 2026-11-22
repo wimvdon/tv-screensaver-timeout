@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- The Android TV launcher banner (320 × 180 dp): the icon's crescent on the gradient. -->
+<!-- The Android TV launcher banner (320 × 180 dp): the icon's gradient crescent, twice the size of
+     the launcher icon's, centred on the icon's soft violet plate. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     android:width="320dp"
@@ -14,16 +15,30 @@
                 android:startY="0"
                 android:endX="320"
                 android:endY="180">
-                <item android:color="#FFB388FF" android:offset="0" />
-                <item android:color="#FF7C4DFF" android:offset="0.5" />
-                <item android:color="#FF4527A0" android:offset="1" />
+                <item android:color="#FFF2EDFF" android:offset="0" />
+                <item android:color="#FFE5DBFF" android:offset="1" />
             </gradient>
         </aapt:attr>
     </path>
-    <group android:translateX="52" android:translateY="-18" android:scaleX="2" android:scaleY="2">
-        <path
-            android:fillColor="#FFFFFFFF"
-            android:fillType="evenOdd"
-            android:pathData="M54.72,24.01 A30,30 0 1,0 82.6,63.05 A24,24 0 1,1 54.72,24.01 Z M40,55 Q41.5,62.5 49,64 Q41.5,65.5 40,73 Q38.5,65.5 31,64 Q38.5,62.5 40,55 Z" />
+    <!-- Moves the icon's centre (54, 54) to the banner's centre (160, 90) at 2 × 0.86. -->
+    <group
+        android:translateX="67.12"
+        android:translateY="-2.88"
+        android:scaleX="1.72"
+        android:scaleY="1.72">
+        <path android:pathData="M54.72,24.01 A30,30 0 1,0 82.6,63.05 A24,24 0 1,1 54.72,24.01 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="24"
+                    android:startY="24"
+                    android:endX="84"
+                    android:endY="84">
+                <item android:color="#FFB388FF" android:offset="0" />
+                <item android:color="#FF7C4DFF" android:offset="0.5" />
+                <item android:color="#FF4527A0" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
     </group>
 </vector>

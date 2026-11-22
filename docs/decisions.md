@@ -2,6 +2,15 @@
 
 Newest first. Add an entry for every notable choice: what was decided, why, and what was rejected.
 
+## 2026-11-22: The icon is just the moon, on a soft violet plate
+
+Part of making all of the owner's app icons one family. The owner asked for a simpler icon: the
+sparkle is gone and the crescent stands alone, a little smaller so it sits well inside the safe
+zone. The white background becomes a soft plate in the app's own violet (`#F2EDFF` → `#E5DBFF`).
+The TV banner follows: the gradient crescent on that plate instead of a white crescent on the
+dark gradient. Rejected: the moon with a small star beside it (busier, and the star is too small
+to read on a TV launcher) and a transparent background (Android always fills the mask).
+
 ## 2026-11-15: Screensaver Timeout is a TV-only app with TV Material and two permissions
 
 The app's only job is on Philips Google TVs: keep Android's screen-off timeout shorter than the
